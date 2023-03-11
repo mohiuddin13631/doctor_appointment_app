@@ -1,4 +1,4 @@
-import 'package:doctor_appoinment_app/view/NavBar.dart';
+ import 'package:doctor_appoinment_app/view/NavBar.dart';
 import 'package:doctor_appoinment_app/view/home_page/HomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NavBar()
+      home: HomePage()
     );
   }
 }
