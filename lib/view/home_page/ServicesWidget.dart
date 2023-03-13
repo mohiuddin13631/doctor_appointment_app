@@ -31,8 +31,9 @@ class ServicesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Expanded(
-      flex:7,
+      flex:8,
       child: Container(
         color: Colors.white,
         padding: EdgeInsets.all(16),

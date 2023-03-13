@@ -1,4 +1,4 @@
-import 'package:doctor_appoinment_app/doctor_page/doctorDetail.dart';
+import 'package:doctor_appoinment_app/model/doctorDetail.dart';
 import 'package:flutter/material.dart';
 
 class DoctorPage extends StatefulWidget {

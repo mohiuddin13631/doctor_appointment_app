@@ -1,4 +1,5 @@
  import 'package:doctor_appoinment_app/view/NavBar.dart';
+import 'package:doctor_appoinment_app/view/appointment.dart';
 import 'package:doctor_appoinment_app/view/home_page/HomePage.dart';
 import 'package:flutter/material.dart';
 
