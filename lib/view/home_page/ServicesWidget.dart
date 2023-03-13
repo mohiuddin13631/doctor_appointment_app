@@ -1,3 +1,4 @@
+import 'package:doctor_appoinment_app/view/doctor_page/doctorHome.dart';
 import 'package:flutter/material.dart';
 class ServicesWidget extends StatelessWidget {
   ServicesWidget({
@@ -9,6 +10,12 @@ class ServicesWidget extends StatelessWidget {
     "assets/images/user_icon.png",
     "assets/images/pharmacy.png",
     "assets/images/tablet.png",
+  ];
+  var iconName = [
+    "Covid 19",
+    "Doctors",
+    "Hospitals",
+    "Medicines"
   ];
 
   @override
@@ -40,21 +47,26 @@ class ServicesWidget extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xffe2f2f3),
-                          minRadius: 40,
-                          child: CircleAvatar(
-                            backgroundColor: Color(0xff07919D),
-                            minRadius: 30,
-                            // backgroundImage: AssetImage("assets/images/tablet.png",),
-                            child: Image.asset("${iconData[index]}",fit: BoxFit.cover,width: 25,)
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorPage(),));
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xffe2f2f3),
+                            minRadius: 40,
+                            child: CircleAvatar(
+                              backgroundColor: Color(0xff07919D),
+                              minRadius: 30,
+                              // backgroundImage: AssetImage("assets/images/tablet.png",),
+                              child: Image.asset("${iconData[index]}",fit: BoxFit.cover,width: 25,)
+                            ),
                           ),
-                        ),
-                        Text("Covid-19")
-                      ],
+                          Text("${iconName[index]}")
+                        ],
+                      ),
                     );
                   }, separatorBuilder: (context, index) => SizedBox(width: 13,), itemCount: 4),
             ),

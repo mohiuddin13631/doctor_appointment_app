@@ -33,8 +33,9 @@ class HomePage extends StatelessWidget {
         return '';
     }
   }
-        @override
+  @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xffE7EDF9),
       body: SafeArea(
@@ -96,18 +97,80 @@ class HomePage extends StatelessWidget {
                       ),
                       SizedBox(height: 20,),
                       CalendarWidget(),
+                      SizedBox(height: 10,),
                       Row(
-                        children: [
+                        children:  [
                           SizedBox(width: 18,),
-                          Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
-                          SizedBox(width: 80,),
-                          Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
+                          // Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                              Container(
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width: 85,),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                              Container(
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ],
+                          ),
                           SizedBox(width: 35,),
-                          Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                              Container(
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ],
+                          ),
                           SizedBox(width: 35,),
-                          Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                              Container(
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ],
+                          ),
                           SizedBox(width: 80,),
-                          Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 5),
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                              Container(
+                                width: 5,height: 5,
+                                decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(50)),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ],
