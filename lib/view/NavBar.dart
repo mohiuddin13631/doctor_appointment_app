@@ -1,4 +1,4 @@
-/*
+
 import 'package:doctor_appoinment_app/view/CalendarPage.dart';
 import 'package:doctor_appoinment_app/view/NotePage.dart';
 import 'package:doctor_appoinment_app/view/SettingPage.dart';
@@ -32,7 +32,7 @@ class _NavBarState extends State<NavBar> {
           setState(() {
             currentIndex = index;
           });
-          print(index);
+          // print(index);
         },
         reverse: navBarMode,
         curve: Curves.easeInBack,
@@ -90,4 +90,4 @@ class _NavBarState extends State<NavBar> {
 
 // Color activeColor = Color(0xff fd8311);
 // Color activeColor = Color(0xff a5bcda);
-*/
+

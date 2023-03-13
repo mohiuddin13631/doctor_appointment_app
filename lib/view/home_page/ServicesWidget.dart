@@ -1,5 +1,8 @@
-import 'package:doctor_appoinment_app/view/doctor_page/doctorHome.dart';
+
+import 'package:doctor_appoinment_app/doctor_page/dumyPage.dart';
 import 'package:flutter/material.dart';
+
+import '../../doctor_page/doctorHome.dart';
 class ServicesWidget extends StatelessWidget {
   ServicesWidget({
     super.key,
@@ -16,6 +19,14 @@ class ServicesWidget extends StatelessWidget {
     "Doctors",
     "Hospitals",
     "Medicines"
+  ];
+
+  var servicePages = [
+    DummyPage(),
+    DoctorPage(),
+    DummyPage(),
+    DummyPage(),
+
   ];
 
   @override
@@ -49,7 +60,7 @@ class ServicesWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorPage(),));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => servicePages[index],));
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
