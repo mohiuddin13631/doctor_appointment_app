@@ -16,7 +16,7 @@ List<MedicineModel> medicineDataList = [
     img: "assets/images/medicine/medicine1.png",
     name: "molcoluck",
     price: 250,
-    number_of_tablets: 0,
+    number_of_tablets: 1,
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
 
   ),
@@ -24,7 +24,7 @@ List<MedicineModel> medicineDataList = [
     img: "assets/images/medicine/medicine2.png",
     name: "Iron Gold",
     price: 300,
-    number_of_tablets: 0,
+    number_of_tablets: 1,
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
 
   ),
@@ -32,7 +32,7 @@ List<MedicineModel> medicineDataList = [
     img: "assets/images/medicine/medicine3.png",
     name: "Cough Syroup",
     price: 200,
-    number_of_tablets: 0,
+    number_of_tablets: 1,
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
 
   ),
@@ -40,7 +40,7 @@ List<MedicineModel> medicineDataList = [
     img: "assets/images/medicine/medicine4.png",
     name: "Agavit",
     price: 400,
-    number_of_tablets: 0,
+    number_of_tablets: 100,
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
 
   ),
@@ -49,6 +49,27 @@ List<MedicineModel> medicineDataList = [
     name: "Paracetamal",
     price: 430,
     number_of_tablets: 100,
+    description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
+  ),
+  MedicineModel(
+    img: "assets/images/medicine/medicine6.png",
+    name: "Mockuop",
+    price: 500,
+    number_of_tablets: 120,
+    description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
+  ),
+  MedicineModel(
+    img: "assets/images/medicine/medicine8.png",
+    name: "Mockup",
+    price: 520,
+    number_of_tablets: 80,
+    description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
+  ),
+  MedicineModel(
+    img: "assets/images/medicine/medicine9.png",
+    name: "Inspiration",
+    price: 200,
+    number_of_tablets: 40,
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
   ),
 ];
