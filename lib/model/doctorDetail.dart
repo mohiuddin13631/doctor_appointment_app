@@ -45,5 +45,4 @@ List<Doctor> doctorItems = [
       year: "3",
       like: "92",
       price: "80"),
-
 ];

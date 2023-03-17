@@ -1,7 +1,7 @@
 
-import 'package:doctor_appoinment_app/view/CalendarPage.dart';
-import 'package:doctor_appoinment_app/view/NotePage.dart';
-import 'package:doctor_appoinment_app/view/SettingPage.dart';
+import 'package:doctor_appoinment_app/view/home_page/CalendarPage.dart';
+import 'package:doctor_appoinment_app/view/home_page/NotePage.dart';
+import 'package:doctor_appoinment_app/view/home_page/SettingPage.dart';
 import 'package:doctor_appoinment_app/view/home_page/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

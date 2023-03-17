@@ -1,6 +1,7 @@
  import 'package:doctor_appoinment_app/view/NavBar.dart';
-import 'package:doctor_appoinment_app/view/appointment.dart';
+import 'package:doctor_appoinment_app/view/doctor_page/appointment.dart';
 import 'package:doctor_appoinment_app/view/home_page/HomePage.dart';
+import 'package:doctor_appoinment_app/view/medicine_page/medicine_list_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NavBar()
+      home: MedicineListPage()
     );
   }
 }

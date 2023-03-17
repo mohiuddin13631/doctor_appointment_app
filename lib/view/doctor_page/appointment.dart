@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+Color textColor = Color(0xff223469);
 class Apointment extends StatefulWidget {
-  const Apointment({super.key});
+  String? profileImg;
+  String? name;
+  String? subtitle;
+  String? price;
+  String? year;
+  String? like;
+
+
+  Apointment(this.profileImg, this.name, this.subtitle, this.price, this.year,
+      this.like);
 
   @override
   State<Apointment> createState() => _ApointmentState();
@@ -17,9 +27,16 @@ class _ApointmentState extends State<Apointment> {
       appBar: AppBar(
         backgroundColor: Colors.cyan[600],
         actions: [
-          Icon(Icons.error_outline_outlined),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: Icon(Icons.error_outline_outlined),
+          ),
         ],
-        leading: Icon(Icons.arrow_back_ios_new),
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back_ios_new)),
         title: Text("Appointment"),
       ),
       body: Container(
@@ -28,8 +45,10 @@ class _ApointmentState extends State<Apointment> {
           children: [
             //1st Section
             DocFile(
-              title: "Wade Warren",
-              image: "assets/images/doc1.jpg",
+              title: widget.name.toString(),
+              image: "${widget.profileImg}",
+              year: widget.year.toString(),
+              like: widget.like.toString(),
             ),
 
             //2nd Section
@@ -64,8 +83,8 @@ class _ApointmentState extends State<Apointment> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("To pay", style: TextStyle(fontSize: 20)),
-                          Text("\$80", style: TextStyle(fontSize: 20))
+                          Text("To pay", style: TextStyle(fontSize: 20,color: textColor)),
+                          Text("\$80", style: TextStyle(fontSize: 20,color: textColor))
                         ],
                       ),
                       Divider(
@@ -96,7 +115,7 @@ class _ApointmentState extends State<Apointment> {
                                   color: Colors.cyan[600],
                                 ),
                               ),
-                              Text("Use promo code"),
+                              Text("Use promo code",style: TextStyle(color: textColor),),
                               Icon(Icons.arrow_forward_ios)
                             ],
                           ),
@@ -117,7 +136,7 @@ class _ApointmentState extends State<Apointment> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Payment Option", style: TextStyle(fontSize: 20)),
+                        Text("Payment Option", style: TextStyle(fontSize: 20,color: textColor)),
                         Container(
                           height: 150,
                           width: double.infinity,
@@ -146,7 +165,7 @@ class _ApointmentState extends State<Apointment> {
                                           });
                                         },
                                       ),
-                                      Text("Paypal"),
+                                      Text("Paypal",style: TextStyle(color:textColor),),
                                     ],
                                   ),
                                   Container(
@@ -179,7 +198,7 @@ class _ApointmentState extends State<Apointment> {
                                           });
                                         },
                                       ),
-                                      Text("Credit Card"),
+                                      Text("Credit Card",style: TextStyle(color: textColor),),
                                     ],
                                   ),
                                   Container(
@@ -239,11 +258,13 @@ class _ApointmentState extends State<Apointment> {
 class DocFile extends StatelessWidget {
   DocFile({
     super.key,
-    required this.title,required this.image,
+    required this.title,required this.image,required this.year,this.like,
   });
 
   String title;
   String image;
+  String year;
+  String? like;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -262,7 +283,7 @@ class DocFile extends StatelessWidget {
                   width: 100,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(image: AssetImage("$image")))),
+                      image: DecorationImage(image: NetworkImage("$image"),fit: BoxFit.cover))),
               Container(
                 padding: EdgeInsets.only(left: 25, top: 9),
                 child: Column(
@@ -271,7 +292,7 @@ class DocFile extends StatelessWidget {
                   children: [
                     Text(
                       "$title",
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 25,color: textColor),
                     ),
                     Text("General Practitoner"),
                     Row(
@@ -286,7 +307,7 @@ class DocFile extends StatelessWidget {
                               color: Colors.orange[100],
                               borderRadius: BorderRadius.circular(20)),
                         ),
-                        Text("  3 years  "),
+                        Text("  ${year} years  "),
                         Container(
                           height: 30,
                           width: 30,
@@ -296,7 +317,7 @@ class DocFile extends StatelessWidget {
                               color: Colors.red[100],
                               borderRadius: BorderRadius.circular(20)),
                         ),
-                        Text("   92%")
+                        Text("   ${like}%")
                       ],
                     )
                   ],

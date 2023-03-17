@@ -1,8 +1,9 @@
 
-import 'package:doctor_appoinment_app/doctor_page/dumyPage.dart';
 import 'package:flutter/material.dart';
 
-import '../../doctor_page/doctorHome.dart';
+import '../doctor_page/doctorHome.dart';
+import '../doctor_page/dumyPage.dart';
+
 class ServicesWidget extends StatelessWidget {
   ServicesWidget({
     super.key,
@@ -64,19 +65,26 @@ class ServicesWidget extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => servicePages[index],));
                       },
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CircleAvatar(
                             backgroundColor: Color(0xffe2f2f3),
                             minRadius: 40,
-                            child: CircleAvatar(
-                              backgroundColor: Color(0xff07919D),
-                              minRadius: 30,
-                              // backgroundImage: AssetImage("assets/images/tablet.png",),
-                              child: Image.asset("${iconData[index]}",fit: BoxFit.cover,width: 25,)
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Color(0xff07919D),
+                                  minRadius: 30,
+                                  child: Image.asset("${iconData[index]}",fit: BoxFit.cover,width: 25,)
+                                ),
+                              ],
                             ),
                           ),
-                          Text("${iconName[index]}")
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text("${iconName[index]}"),
+                          )
                         ],
                       ),
                     );

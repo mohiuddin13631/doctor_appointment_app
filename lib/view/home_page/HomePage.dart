@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_timeline_calendar/timeline/model/calendar_options.dart';
-import 'package:flutter_timeline_calendar/timeline/model/day_options.dart';
-import 'package:flutter_timeline_calendar/timeline/model/headers_options.dart';
-import 'package:flutter_timeline_calendar/timeline/utils/calendar_types.dart';
-import 'package:flutter_timeline_calendar/timeline/widget/timeline_calendar.dart';
+
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../widget/search_field.dart';
 import 'CalendarWidget.dart';
 import 'ServicesWidget.dart';
 class HomePage extends StatelessWidget {
@@ -78,29 +75,14 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: 25,),
-                      Form(
-                        key: _formKey,
-                        child: TextFormField(
-                          controller: searchController,
-                          decoration: InputDecoration(
-                            // contentPadding: EdgeInsets.symmetric(vertical: 20),
-                            prefixIcon: Icon(Icons.search_rounded),
-                            labelText: "Search",
-                            fillColor: Colors.white,
-                            filled: true,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-
-                            )
-                          ),
-                        ),
-                      ),
+                      SearchField(formKey: _formKey, searchController: searchController,labelText: "Search"),
                       SizedBox(height: 20,),
                       CalendarWidget(),
                       SizedBox(height: 10,),
+                      // Spacer(),
                       Row(
                         children:  [
-                          SizedBox(width: 18,),
+                          SizedBox(width: 20,),
                           // Text("..",style: TextStyle(color: Color(0xfffefefe),fontSize: 30,fontWeight: FontWeight.w700),),
                           Row(
                             children: [
@@ -130,7 +112,9 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           SizedBox(width: 35,),
+                          // Expanded(flex :2,child: Container()),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(right: 5),
@@ -157,7 +141,7 @@ class HomePage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(width: 80,),
+                          SizedBox(width: 85,),
                           Row(
                             children: [
                               Container(

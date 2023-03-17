@@ -1,4 +1,5 @@
 import 'package:doctor_appoinment_app/model/doctorDetail.dart';
+import 'package:doctor_appoinment_app/view/doctor_page/appointment.dart';
 import 'package:flutter/material.dart';
 
 class DoctorPage extends StatefulWidget {
@@ -24,21 +25,29 @@ class _DoctorPageState extends State<DoctorPage> {
                 color: Colors.cyan[800],
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          "DOCTORS",
-                          style: TextStyle(
-                            color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap:(){
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        Spacer(),
-                        Icon(Icons.info_outline, color: Colors.white),
-                      ],
+                          Text(
+                            "DOCTORS",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(Icons.info_outline, color: Colors.white),
+                        ],
+                      ),
                     ),
                     Padding(
                         padding: EdgeInsets.all(8.0),
@@ -66,6 +75,7 @@ class _DoctorPageState extends State<DoctorPage> {
             child: ListView.builder(
               itemCount: doctorItems.length,
               itemBuilder: (context, index) {
+                var doctroItems = doctorItems[index];
                 return Padding(
                   padding: EdgeInsets.symmetric(vertical: 6),
                   child: Container(
@@ -177,18 +187,23 @@ class _DoctorPageState extends State<DoctorPage> {
                               width: 16,
                             ),
                             Expanded(
-                                child: Container(
+                                child: InkWell(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Apointment(doctroItems.profileImg, doctroItems.name, doctroItems.subtitle, doctroItems.price, doctroItems.year, doctroItems.like),));
+                                  },
+                                  child: Container(
                               decoration: BoxDecoration(
-                                  color: Colors.orange,
-                                  borderRadius: BorderRadius.circular(24)),
+                                    color: Colors.orange,
+                                    borderRadius: BorderRadius.circular(24)),
                               padding: EdgeInsets.symmetric(vertical: 12),
                               child: Center(
-                                child: Text(
-                                  "Make an appointment",
-                                  style: TextStyle(color: Colors.white),
-                                ),
+                                  child: Text(
+                                    "Make an appointment",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                               ),
-                            )),
+                            ),
+                                )),
                           ],
                         )
                       ],
