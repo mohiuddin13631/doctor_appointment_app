@@ -38,6 +38,8 @@ dependencies:
   table_calendar: ^3.0.9
   titled_navigation_bar: ^4.1.0
   get:
+  carousel_slider: ^4.2.1
+  badges:
 
 
 dev_dependencies:

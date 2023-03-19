@@ -11,7 +11,7 @@ import '../../widget/app_bar.dart';
 class MedicineListPage extends StatelessWidget {
   MedicineListPage({Key? key}) : super(key: key);
 
-  MedicineController medicineController = Get.put(MedicineController());
+  MedicineController medicineController = Get.find();
   TextEditingController searchController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   var isFavorite = false;

@@ -1,4 +1,5 @@
 
+import 'package:doctor_appoinment_app/view/medicine_page/medicine_list_page.dart';
 import 'package:flutter/material.dart';
 
 import '../doctor_page/doctorHome.dart';
@@ -26,8 +27,7 @@ class ServicesWidget extends StatelessWidget {
     DummyPage(),
     DoctorPage(),
     DummyPage(),
-    DummyPage(),
-
+    MedicineListPage()
   ];
 
   @override

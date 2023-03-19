@@ -51,14 +51,22 @@ class MedicineDetailsPage extends StatelessWidget {
                           ),
                           child: Row(
                             children: [
-                              IconButton(onPressed: (){}, icon: Icon(Icons.remove,)),
-                              Text(medicine.quantity.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                              IconButton(onPressed: (){}, icon: Icon(Icons.add,)),
+                              IconButton(onPressed: (){
+                                medicineController.decreaseQuantity(index);
+                              }, icon: Icon(Icons.remove,)),
+                              GetBuilder<MedicineController>(builder: (controller) {
+                                return Text(medicine.quantity.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),);
+                              },),
+                              IconButton(onPressed: (){
+                                medicineController.increaseQuantity(index);
+                              }, icon: Icon(Icons.add,)),
                             ],
                           ),
                         ),
                         Spacer(),
-                        Text("\$${medicine.price}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                        GetBuilder<MedicineController>(builder: (controller) {
+                          return Text("\$${medicineController.medicinePrice(index)}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),);
+                        },)
                       ],
                     ),
                     
@@ -96,10 +104,10 @@ class MedicineDetailsPage extends StatelessWidget {
           },)
           ),
         ),
-        SizedBox(width: 16,),
+        const SizedBox(width: 16,),
         Expanded(
           child: MaterialButton(onPressed: () {
-
+            medicineController.addToCard(index);
           },
             elevation: 0,
             color: orangeColor,
@@ -108,7 +116,7 @@ class MedicineDetailsPage extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16)
             ),
-            child: Text("Add to cart",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+            child: const Text("Add to cart",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
           ),
         )
       ],

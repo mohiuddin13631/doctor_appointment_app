@@ -1,18 +1,20 @@
 class MedicineModel {
-  int? quantity = 1;
+  int quantity = 1;
   var favorite = false;
   String? img;
   String? name;
   int? price;
   String? description;
   int? number_of_tablets;
+  int? id;
 
-  MedicineModel({required this.img, required this.name, required this.price,
+  MedicineModel({required this.id,required this.img, required this.name, required this.price,
     required this.description, this.number_of_tablets});
 }
 
 List<MedicineModel> medicineDataList = [
   MedicineModel(
+    id: 1,
     img: "assets/images/medicine/medicine1.png",
     name: "molcoluck",
     price: 250,
@@ -21,6 +23,7 @@ List<MedicineModel> medicineDataList = [
 
   ),
   MedicineModel(
+    id: 2,
     img: "assets/images/medicine/medicine2.png",
     name: "Iron Gold",
     price: 300,
@@ -29,6 +32,7 @@ List<MedicineModel> medicineDataList = [
 
   ),
   MedicineModel(
+    id: 3,
     img: "assets/images/medicine/medicine3.png",
     name: "Cough Syroup",
     price: 200,
@@ -37,6 +41,7 @@ List<MedicineModel> medicineDataList = [
 
   ),
   MedicineModel(
+    id: 4,
     img: "assets/images/medicine/medicine4.png",
     name: "Agavit",
     price: 400,
@@ -45,6 +50,7 @@ List<MedicineModel> medicineDataList = [
 
   ),
   MedicineModel(
+    id: 5,
     img: "assets/images/medicine/medicine5.png",
     name: "Paracetamal",
     price: 430,
@@ -52,6 +58,7 @@ List<MedicineModel> medicineDataList = [
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
   ),
   MedicineModel(
+    id: 6,
     img: "assets/images/medicine/medicine6.png",
     name: "Mockuop",
     price: 500,
@@ -59,6 +66,7 @@ List<MedicineModel> medicineDataList = [
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
   ),
   MedicineModel(
+    id: 7,
     img: "assets/images/medicine/medicine8.png",
     name: "Mockup",
     price: 520,
@@ -66,6 +74,7 @@ List<MedicineModel> medicineDataList = [
     description: "Magnesium is a cofactor in more than 300 enzyme systems that regulate diverse biochemical reactions in the body, including protein synthesis, muscle and nerve function, blood glucose control, and blood pressure regulation [1-3]. Magnesium is required for energy production, oxidative phosphorylation, and glycolysis.",
   ),
   MedicineModel(
+    id: 8,
     img: "assets/images/medicine/medicine9.png",
     name: "Inspiration",
     price: 200,
