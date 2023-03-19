@@ -1,4 +1,6 @@
 import 'package:doctor_appoinment_app/controller/medicine_controller.dart';
+import 'package:doctor_appoinment_app/view/medicine_page/medicine_details_page.dart';
+import 'package:doctor_appoinment_app/view/medicine_page/medicine_list_page.dart';
 import 'package:doctor_appoinment_app/widget/app_bar.dart';
 import 'package:doctor_appoinment_app/widget/custom_color.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,7 @@ class _CardPageState extends State<CardPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(),
@@ -28,6 +31,7 @@ class _CardPageState extends State<CardPage> {
                     padding: const EdgeInsets.all(12.0),
                     child: ListView.separated(
                       //todo: important concept
+
                         shrinkWrap: true,
                         separatorBuilder: (context, index) => const SizedBox(
                           height: 15,
@@ -35,6 +39,7 @@ class _CardPageState extends State<CardPage> {
                         itemCount: medicineController.cardList.length,
                         itemBuilder: (context, index) {
                           // var jacket = cardController.cardList![index];
+                          var medicine = medicineController.cardList[index];
                           return SizedBox(
                             height: 150,
                             child: Row(
@@ -43,15 +48,20 @@ class _CardPageState extends State<CardPage> {
                                   flex: 1,
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey.withOpacity(.3),
-                                          borderRadius: BorderRadius.circular(25)),
-                                      child: SizedBox(
-                                        height: 170,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image.asset(medicineController.cardList[index].img.toString(),fit: BoxFit.cover,),
+                                    child: InkWell(
+                                      onTap: () {
+                                        Get.to(MedicineDetailsPage(index: index));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey.withOpacity(.3),
+                                            borderRadius: BorderRadius.circular(25)),
+                                        child: SizedBox(
+                                          height: 170,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Image.asset(medicineController.cardList[index].img.toString(),fit: BoxFit.cover,),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -62,6 +72,7 @@ class _CardPageState extends State<CardPage> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         const SizedBox(
@@ -74,13 +85,19 @@ class _CardPageState extends State<CardPage> {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         const SizedBox(
-                                          height: 15,
+                                          height: 10,
                                         ),
                                         Text(
                                           "Price: ${medicineController.getPriceCardList(index)}",
                                           style: const TextStyle(
                                               fontWeight: FontWeight.bold),
                                         ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        medicine.number_of_tablets! > 1?
+                                        Text("${medicine.number_of_tablets} tablets",style: TextStyle(color: Colors.black54,fontSize: 16),)
+                                            :Text("${medicine.number_of_tablets} Syroup",style: TextStyle(color: Colors.black54,fontSize: 16),),
 
                                         const Spacer(),
                                         Row(
