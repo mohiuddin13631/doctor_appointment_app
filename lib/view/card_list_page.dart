@@ -50,7 +50,7 @@ class _CardPageState extends State<CardPage> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: InkWell(
                                       onTap: () {
-                                        Get.to(MedicineDetailsPage(index: index));
+                                        // Get.to(MedicineDetailsPage(index: index));
                                       },
                                       child: Container(
                                         decoration: BoxDecoration(

@@ -15,6 +15,7 @@ class MedicineDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // var medicine = medicineController.medicineList[index];
     var medicine = medicineController.medicineList[index];
     return Scaffold(
       backgroundColor: bgColor.withOpacity(.8),

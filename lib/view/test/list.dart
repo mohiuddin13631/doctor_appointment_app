@@ -1,3 +1,6 @@
+
+
+
 import 'package:doctor_appoinment_app/controller/medicine_controller.dart';
 import 'package:doctor_appoinment_app/model/medicine_model.dart';
 import 'package:doctor_appoinment_app/view/medicine_page/medicine_details_page.dart';
@@ -8,8 +11,8 @@ import 'package:get/get.dart';
 
 import '../../controller/medicine_controller.dart';
 import '../../widget/app_bar.dart';
-class MedicineListPage extends StatelessWidget {
-  MedicineListPage({Key? key}) : super(key: key);
+class ListPage extends StatelessWidget {
+  ListPage({Key? key}) : super(key: key);
 
   MedicineController medicineController = Get.find();
   TextEditingController searchController = TextEditingController();
@@ -40,8 +43,8 @@ class MedicineListPage extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     // color: Colors.grey,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: tealColor)
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(color: tealColor)
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,8 +54,8 @@ class MedicineListPage extends StatelessWidget {
                           child: Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage(medicineDataList[index].img.toString()),
-                                fit: BoxFit.cover
+                                  image: AssetImage(medicineDataList[index].img.toString()),
+                                  fit: BoxFit.cover
                               ),
                             ),
                           ),
