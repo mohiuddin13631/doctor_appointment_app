@@ -74,7 +74,7 @@ class MedicineDetailsPage extends StatelessWidget {
                       // ),
                       // Spacer(),
                       GetBuilder<MedicineController>(builder: (controller) {
-                        return Text("\$${medicineController.medicinePrice(index)}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),);
+                        return Text("\$${medicine.price}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),);
                       },)
                     ],
                   ),

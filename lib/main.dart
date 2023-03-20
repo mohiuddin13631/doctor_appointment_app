@@ -5,7 +5,6 @@ import 'package:doctor_appoinment_app/view/home_page/HomePage.dart';
 import 'package:doctor_appoinment_app/view/medicine_page/medicine_details_page.dart';
 import 'package:doctor_appoinment_app/view/medicine_page/medicine_list_page.dart';
 import 'package:doctor_appoinment_app/view/medicine_page/practice.dart';
-import 'package:doctor_appoinment_app/view/test/list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
