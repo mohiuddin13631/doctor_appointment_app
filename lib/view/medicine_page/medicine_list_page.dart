@@ -32,7 +32,7 @@ class MedicineListPage extends StatelessWidget {
               gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: .7), itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(()=>MedicineDetailsPage(index: index,));
+                  Get.to(()=>MedicineDetailsPage(medicineList: medicineController.medicineList,index: index,));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),

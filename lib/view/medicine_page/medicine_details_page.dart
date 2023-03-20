@@ -9,14 +9,14 @@ import '../../model/medicine_model.dart';
 class MedicineDetailsPage extends StatelessWidget {
   MedicineController medicineController = Get.find();
   int index;
+  List<MedicineModel> medicineList;
   // MedicineModel medicineModel;
-  MedicineDetailsPage({required this.index});
+  MedicineDetailsPage({required this.medicineList,required this.index});
 
 
   @override
   Widget build(BuildContext context) {
-    // var medicine = medicineController.medicineList[index];
-    var medicine = medicineController.medicineList[index];
+    var medicine = medicineList[index];
     return Scaffold(
       backgroundColor: bgColor.withOpacity(.8),
       appBar: MyAppBar(),
@@ -27,7 +27,7 @@ class MedicineDetailsPage extends StatelessWidget {
           //     child: Image.asset(medicineController.medicineList[index].img.toString())),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
-            child: MyCarouselSlider(index: index),
+            child: MyCarouselSlider(index: index,medicineList: medicineList,),
           ),
           Expanded(child: Container(
             width: double.maxFinite,
@@ -51,28 +51,28 @@ class MedicineDetailsPage extends StatelessWidget {
 
                   Row(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        // width: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.black26),
-                        ),
-                        child: Row(
-                          children: [
-                            IconButton(onPressed: (){
-                              medicineController.decreaseQuantity(index);
-                            }, icon: Icon(Icons.remove,)),
-                            GetBuilder<MedicineController>(builder: (controller) {
-                              return Text(medicine.quantity.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),);
-                            },),
-                            IconButton(onPressed: (){
-                              medicineController.increaseQuantity(index);
-                            }, icon: Icon(Icons.add,)),
-                          ],
-                        ),
-                      ),
-                      Spacer(),
+                      // Container(
+                      //   padding: const EdgeInsets.symmetric(horizontal: 8),
+                      //   // width: 200,
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(16),
+                      //     border: Border.all(color: Colors.black26),
+                      //   ),
+                      //   child: Row(
+                      //     children: [
+                      //       IconButton(onPressed: (){
+                      //         medicineController.decreaseQuantityCardList(index);
+                      //       }, icon: Icon(Icons.remove,)),
+                      //       GetBuilder<MedicineController>(builder: (controller) {
+                      //         return Text(medicine.quantity.toString(),style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),);
+                      //       },),
+                      //       IconButton(onPressed: (){
+                      //         medicineController.increaseQuantityCardList(index);
+                      //       }, icon: Icon(Icons.add,)),
+                      //     ],
+                      //   ),
+                      // ),
+                      // Spacer(),
                       GetBuilder<MedicineController>(builder: (controller) {
                         return Text("\$${medicineController.medicinePrice(index)}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),);
                       },)

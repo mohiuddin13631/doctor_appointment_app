@@ -51,6 +51,7 @@ class _CardPageState extends State<CardPage> {
                                     child: InkWell(
                                       onTap: () {
                                         // Get.to(MedicineDetailsPage(index: index));
+                                        Get.to(MedicineDetailsPage(medicineList: medicineController.cardList,index: index,));
                                       },
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -85,7 +86,7 @@ class _CardPageState extends State<CardPage> {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 5,
                                         ),
                                         Text(
                                           "Price: ${medicineController.getPriceCardList(index)}",
@@ -93,7 +94,7 @@ class _CardPageState extends State<CardPage> {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 5,
                                         ),
                                         medicine.number_of_tablets! > 1?
                                         Text("${medicine.number_of_tablets} tablets",style: TextStyle(color: Colors.black54,fontSize: 16),)
