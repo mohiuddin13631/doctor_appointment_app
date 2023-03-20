@@ -9,7 +9,8 @@ import 'package:get/get.dart';
 class MyCarouselSlider extends StatelessWidget {
 
   int index;
-  MyCarouselSlider({required this.index});
+  List<MedicineModel> medicineList = [];
+  MyCarouselSlider({required this.index,required this.medicineList});
 
   MedicineController medicineController = Get.put(MedicineController());
 
@@ -20,9 +21,9 @@ class MyCarouselSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var imgList = [
-      medicineController.medicineList[index].img,
-      medicineController.medicineList[index].img,
-      medicineController.medicineList[index].img,
+      medicineList[index].img,
+      medicineList[index].img,
+      medicineList[index].img,
     ];
     List<Widget> imageSliders = imgList
         .map((item) => Container(

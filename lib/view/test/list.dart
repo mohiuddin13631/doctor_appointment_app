@@ -1,9 +1,8 @@
 
-
-
 import 'package:doctor_appoinment_app/controller/medicine_controller.dart';
 import 'package:doctor_appoinment_app/model/medicine_model.dart';
 import 'package:doctor_appoinment_app/view/medicine_page/medicine_details_page.dart';
+import 'package:doctor_appoinment_app/view/test/details.dart';
 import 'package:doctor_appoinment_app/widget/custom_color.dart';
 import 'package:doctor_appoinment_app/widget/search_field.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +34,8 @@ class ListPage extends StatelessWidget {
               gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: .7), itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(()=>MedicineDetailsPage(index: index,));
+                  // Get.to(()=>MedicineDetailsPage(index: index,));
+                  Get.to(()=>DetailsPage(medicine: medicineController.medicineList,index: index,));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -69,7 +69,7 @@ class ListPage extends StatelessWidget {
                             IconButton(onPressed: (){
                               // favoriteController.isFavorite.value = !favoriteController.isFavorite.value;
                               // medicineController.setFavorite(medicineDataList[index]);
-                              medicineController.setFavorite(index);
+                              medicineController.addToCard(index);
                             }, icon: GetBuilder<MedicineController>(builder: (controller) {
                               return Icon(medicineController.medicineList[index].favorite == true? Icons.favorite:Icons.favorite_border,color: orangeColor,);
                             },)
