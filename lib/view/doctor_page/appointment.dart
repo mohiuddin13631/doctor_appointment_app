@@ -311,7 +311,7 @@ class DocFile extends StatelessWidget {
                         Container(
                           height: 30,
                           width: 30,
-                          child: Icon(Icons.heart_broken_sharp,
+                          child: Icon(Icons.favorite,
                               color: Colors.red[600]),
                           decoration: BoxDecoration(
                               color: Colors.red[100],
